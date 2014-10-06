@@ -13,18 +13,11 @@
 
 Route::get('/', function()
 {
-		$data = ['name' => 'Rico', 'email' => 'rico@doc.com'];
-		
-	//return View::make('hello', array('name' => 'friend'));
-	return View::make('hello')->with($data);
-	//return View::make('hello')->withName( 'friend');
-	
+		$data = [
+			'name' => 'Rico', 
+			'email' => 'rico@doc.com',
+			'location' => 'Manila'
+		];
+	return View::make('hello')->withArray($data);
 });
 
-Route::get('/hello/{name?}', function($name = 'ikaw')
-{
-	//return View::make('hello', array('name' => 'friend'));
-	return View::make('hello')->with('name', $name);
-	//return View::make('hello')->withName( 'friend');
-	
-});
