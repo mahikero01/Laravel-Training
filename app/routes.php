@@ -15,5 +15,5 @@ Route::get('/', function()
 {
 	//return View::make('hello', array('name' => 'friend'));
 	//return View::make('hello')->with('name', 'friend');
-	return View::make('hello')->withName('friend');
+	return View::make('hello')->withName( 'friend');
 });
