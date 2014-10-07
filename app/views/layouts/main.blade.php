@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Foundation | Welcome</title>
         <link rel="stylesheet" href={{ asset('css/foundation.css')}} />
-        <script src="js/vendor/modernizr.js"></script>
+        <script src={{ asset('js/vendor/modernizr.js') }}></script>
     </head>
 
 <body>
@@ -42,8 +42,9 @@
         </div>
     </footer>
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    
+    {{ HTML::script('js/vendor/jquery.js') }}
+    {{ HTML::script('js/foundation.min.js') }}
     <script>
       $(document).foundation();
     </script>

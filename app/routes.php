@@ -11,6 +11,13 @@
 |
 */
 
+/*
+ * / = home
+ * /todos - all list
+ * /todos/1 - show
+ * /todos/1/edit - edt and update
+ */
+
 Route::get('/', function()
 {
 	return View::make('todos/index');
