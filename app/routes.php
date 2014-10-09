@@ -25,7 +25,9 @@ Route::get('/', 'TodoListController@index');
 
 Route::get('/db', function(){
 	
-	return DB::table('todo_lists')->get();
+	$result = DB::table('todo_lists')->where('name', 'rico list')->first();
+
+	return $result;
 });
 
 
