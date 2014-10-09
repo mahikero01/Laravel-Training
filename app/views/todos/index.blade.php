@@ -1,8 +1,9 @@
 @extends('layouts.main')
 @section('content')
 	<h2>Show All Todo Lists</h2>
-	<?php var_dump($todo_lists); ?>
 	<ul>
-		<li>List One</li>
+		@foreach ($todo_lists as $list)
+		<li>{{{ $list->name }}}</li>
+		@endforeach
 	</ul>
 @stop
