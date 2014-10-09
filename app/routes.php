@@ -24,7 +24,7 @@ Route::get('/', 'TodoListController@index');
 //Route::get('/todos/{id}', 'TodoListController@show' );
 
 Route::get('/db', function(){
-	return DB::select('select database();');
+	return DB::table('todo_lists')->get();
 });
 
 
