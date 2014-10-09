@@ -21,7 +21,7 @@ class TodoListController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('todos.create');
 	}
 
 
@@ -32,7 +32,10 @@ class TodoListController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$list = new TodoList();
+		$list->name = "Another List";
+		$list->save();
+		return "Create a new List";
 	}
 
 
@@ -44,7 +47,8 @@ class TodoListController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return View::make('todos.show')->withId($id);
+		$list = TodoList::findOrFail($id);
+		return View::make('todos.show')->withList($list);
 	}
 
 
