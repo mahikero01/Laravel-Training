@@ -40,7 +40,7 @@ class TodoListController extends \BaseController {
 	{
 		//rules
 		$rules = array(
-			'title' => array('required', 'unique:todo_lists,name')
+			'name' => array('required', 'unique:todo_lists')
 		);
 		
 		//validator
@@ -51,7 +51,7 @@ class TodoListController extends \BaseController {
 			return Redirect::route('todos.create')->withErrors($validator)->withInput();
 		}
 		
-		$name = Input::get('title');
+		$name = Input::get('name');
 		$list = new TodoList();
 		$list->name = $name;
 		$list->save();
