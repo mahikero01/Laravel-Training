@@ -37,7 +37,6 @@ class TodoListController extends \BaseController {
 		$list->name = $name;
 		$list->save();
 		return Redirect::route('todos.index');
-		
 	}
 
 
