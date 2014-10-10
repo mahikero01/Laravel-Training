@@ -15,6 +15,7 @@ class CreateTodoItemsTable extends Migration {
 		Schema::create('todo_items', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->integer('todo_list_id');
 			$table->string('content')->unique(); 
 			$table->dateTime('completed_on')->nullable();
 			$table->timestamps();
