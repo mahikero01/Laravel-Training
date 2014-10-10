@@ -32,10 +32,12 @@ class TodoListController extends \BaseController {
 	 */
 	public function store()
 	{
+		$name = Input::get('title');
 		$list = new TodoList();
-		$list->name = "Another List";
+		$list->name = $name;
 		$list->save();
-		return "Create a new List";
+		return Redirect::route('todos.index');
+		
 	}
 
 
